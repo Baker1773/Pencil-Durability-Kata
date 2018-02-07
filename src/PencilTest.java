@@ -27,4 +27,17 @@ public class PencilTest {
 		assertEquals(18, pencil.GetDurability());
 
 	}
+
+	@Test
+	public void PencilLeadDurabilityIsLostAfterWrittingTheWordApple() {
+
+		Pencil pencil = new Pencil(20);
+		assertEquals(20, pencil.GetDurability());
+
+		Paper paper = new Paper();
+		pencil.Write("Apple", paper);
+
+		assertEquals(14, pencil.GetDurability());
+
+	}
 }
