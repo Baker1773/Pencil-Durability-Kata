@@ -26,4 +26,16 @@ public class PaperTest {
 		assertEquals("Onion", paper.GetText());
 
 	}
+
+	@Test
+	public void PaperGetsSentenceWrittenOnIt() {
+		Pencil pencil = new Pencil(20, 5);
+		assertEquals(20, pencil.GetDurability());
+
+		Paper paper = new Paper();
+		pencil.Write("This is a sentence", paper);
+
+		assertEquals("This is a sentence", paper.GetText());
+
+	}
 }

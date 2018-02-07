@@ -26,7 +26,8 @@ public class Pencil {
 			} else if (leadDurability >= 2 && Character.isUpperCase(c)) {
 				leadDurability -= 2;
 				paper.Write(c.toString());
-			}
+			} else
+				paper.Write(" ");
 		}
 
 	}
