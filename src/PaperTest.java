@@ -38,4 +38,16 @@ public class PaperTest {
 		assertEquals("This is a sentence", paper.GetText());
 
 	}
+
+	@Test
+	public void PaperGetsSentenceWithNewLineWrittenOnIt() {
+		Pencil pencil = new Pencil(20, 5);
+		assertEquals(20, pencil.GetDurability());
+
+		Paper paper = new Paper();
+		pencil.Write("This is a sentence\n", paper);
+
+		assertEquals("This is a sentence\n", paper.GetText());
+
+	}
 }
