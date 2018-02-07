@@ -10,4 +10,9 @@ public class Pencil {
 		return leadDurability;
 	}
 
+	public void Write(String string, Paper paper) {
+		leadDurability -= 2;
+
+	}
+
 }
