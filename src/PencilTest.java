@@ -8,4 +8,10 @@ public class PencilTest {
 		Pencil pencil = new Pencil(5);
 		assertEquals(5, pencil.GetDurability());
 	}
+
+	@Test
+	public void PencilRetainsLeadDurabilityAndLeadDurabilityIs20() {
+		Pencil pencil = new Pencil(20);
+		assertEquals(20, pencil.GetDurability());
+	}
 }

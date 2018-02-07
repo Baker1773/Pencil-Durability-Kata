@@ -7,7 +7,7 @@ public class Pencil {
 	}
 
 	public int GetDurability() {
-		return 5;
+		return leadDurability;
 	}
 
 }
