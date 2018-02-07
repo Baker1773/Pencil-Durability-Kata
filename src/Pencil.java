@@ -18,11 +18,15 @@ public class Pencil {
 
 	public void Write(String stringToWrite, Paper paper) {
 		for (int index = 0; index < stringToWrite.length(); index++) {
-			char c = stringToWrite.charAt(index);
-			if (leadDurability >= 1 && Character.isLowerCase(c))
+			Character c = stringToWrite.charAt(index);
+			if (leadDurability >= 1 && Character.isLowerCase(c)) {
 				leadDurability--;
-			else if (leadDurability >= 2 && Character.isUpperCase(c))
+				paper.Write(c.toString());
+
+			} else if (leadDurability >= 2 && Character.isUpperCase(c)) {
 				leadDurability -= 2;
+				paper.Write(c.toString());
+			}
 		}
 
 	}
