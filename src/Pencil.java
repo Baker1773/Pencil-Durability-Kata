@@ -3,9 +3,13 @@ public class Pencil {
 	int leadDurability;
 	int leadDurabilityMax;
 
-	public Pencil(int leadDurability) {
+	int length;
+
+	public Pencil(int leadDurability, int length) {
 		this.leadDurability = leadDurability;
 		this.leadDurabilityMax = leadDurability;
+
+		this.length = length;
 	}
 
 	public int GetDurability() {
@@ -25,6 +29,11 @@ public class Pencil {
 
 	public void Sharpen() {
 		leadDurability = leadDurabilityMax;
+		length--;
+	}
+
+	public int GetLength() {
+		return length;
 	}
 
 }
