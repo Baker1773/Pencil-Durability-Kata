@@ -40,4 +40,33 @@ public class PencilTest {
 		assertEquals(14, pencil.GetDurability());
 
 	}
+
+	@Test
+	public void PencilLeadDurabilityIsLostAfterWrittingTheWordAppleWillInsuffientDurability() {
+
+		Pencil pencil = new Pencil(5);
+		assertEquals(5, pencil.GetDurability());
+
+		Paper paper = new Paper();
+		pencil.Write("Apple", paper);
+
+		assertEquals(0, pencil.GetDurability());
+
+	}
+
+	@Test
+	public void SharpenPencilToRegainLostDurability() {
+
+		Pencil pencil = new Pencil(20);
+		assertEquals(20, pencil.GetDurability());
+
+		Paper paper = new Paper();
+		pencil.Write("Apple", paper);
+
+		assertEquals(14, pencil.GetDurability());
+
+		pencil.Sharpen();
+
+		assertEquals(20, pencil.GetDurability());
+	}
 }
