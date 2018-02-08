@@ -236,4 +236,14 @@ public class PencilTest {
 
 		assertEquals("Tab\tTab", paper.GetText());
 	}
+
+	@Test
+	public void WritingATabDoesNotUseLeadDurability() {
+		Pencil pencil = new Pencil(10, 5);
+
+		Paper paper = new Paper();
+		pencil.Write("Tab\tTab", paper);
+
+		assertEquals(2, pencil.GetDurability());
+	}
 }
