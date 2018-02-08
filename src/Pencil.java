@@ -28,7 +28,10 @@ public class Pencil {
 				paper.Write(c.toString());
 			} else if (c.equals('\n'))
 				paper.Write(c.toString());
+			// I am assuming digits will use 2 durability for the pencil to
+			// write
 			else if (Character.isDigit(c)) {
+				leadDurability -= 2;
 				paper.Write(c.toString());
 			} else
 				paper.Write(" ");

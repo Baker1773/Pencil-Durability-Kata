@@ -168,4 +168,14 @@ public class PencilTest {
 
 		assertEquals("One 1", paper.GetText());
 	}
+
+	@Test
+	public void WrittingNumbersUsesLeadDurability() {
+		Pencil pencil = new Pencil(20, 5);
+
+		Paper paper = new Paper();
+		pencil.Write("One 1", paper);
+
+		assertEquals(14, pencil.GetDurability());
+	}
 }
