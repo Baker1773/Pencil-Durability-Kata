@@ -279,4 +279,15 @@ public class PencilTest {
 		assertEquals(0, pencil.GetLength());
 		assertEquals(2, pencil.GetDurability());
 	}
+
+	@Test
+	public void AttemptToEraseSomethingNotInTheSentence() {
+		Pencil pencil = new Pencil(20, 5);
+
+		Paper paper = new Paper();
+		pencil.Write("This is a sentence", paper);
+		pencil.Erase("word", paper);
+
+		assertEquals("This is a sentence", paper.GetText());
+	}
 }
