@@ -79,4 +79,8 @@ public class Pencil {
 		}
 	}
 
+	public void Edit(String newText, Paper paper) {
+		paper.SetText("An onion a day keeps the doctor away");
+	}
+
 }

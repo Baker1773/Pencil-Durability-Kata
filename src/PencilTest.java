@@ -312,4 +312,17 @@ public class PencilTest {
 
 		assertEquals("This is a se     e", paper.GetText());
 	}
+
+	@Test
+	public void EditOnionIntoSentence() {
+		Pencil pencil = new Pencil(20, 5, 5);
+
+		Paper paper = new Paper();
+		pencil.Write("An apple a day keeps the doctor away", paper);
+		pencil.Erase("apple", paper);
+
+		pencil.Edit("onion", paper);
+
+		assertEquals("An onion a day keeps the doctor away", paper.GetText());
+	}
 }
