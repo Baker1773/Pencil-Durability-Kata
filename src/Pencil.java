@@ -89,7 +89,10 @@ public class Pencil {
 			for (int index = 0; index < paper.GetText().length(); index++) {
 				if (index >= indexOfSpace
 						&& index < indexOfSpace + newEdit.length()) {
-					replacementText += newEdit.charAt(replacementIndex);
+					if (Character.isWhitespace(paper.GetText().charAt(index)))
+						replacementText += newEdit.charAt(replacementIndex);
+					else
+						replacementText += "@";
 					replacementIndex++;
 				} else
 					replacementText += paper.GetText().charAt(index);

@@ -338,4 +338,15 @@ public class PencilTest {
 
 		assertEquals("An apple a day keeps the doctor away", paper.GetText());
 	}
+
+	@Test
+	public void CollitionWithEditTextFromWordBeingToLong() {
+		Pencil pencil = new Pencil(200, 5, 50);
+
+		Paper paper = new Paper();
+		pencil.Write("An       a day keeps the doctor away", paper);
+		pencil.Edit("artichoke", paper);
+
+		assertEquals("An artich@k@ay keeps the doctor away", paper.GetText());
+	}
 }
