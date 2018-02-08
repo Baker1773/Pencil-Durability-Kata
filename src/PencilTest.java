@@ -226,4 +226,14 @@ public class PencilTest {
 
 		assertEquals("Question  ", paper.GetText());
 	}
+
+	@Test
+	public void PencilCanWriteTab() {
+		Pencil pencil = new Pencil(10, 5);
+
+		Paper paper = new Paper();
+		pencil.Write("Tab\tTab", paper);
+
+		assertEquals("Tab\tTab", paper.GetText());
+	}
 }

@@ -30,7 +30,7 @@ public class Pencil {
 			else if (leadDurability >= 2 && !Character.isWhitespace(c)) {
 				leadDurability -= 2;
 				paper.Write(c.toString());
-			} else if (c.equals('\n'))
+			} else if (Character.isWhitespace(c))
 				paper.Write(c.toString());
 			else
 				paper.Write(" ");
