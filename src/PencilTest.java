@@ -349,4 +349,15 @@ public class PencilTest {
 
 		assertEquals("An artich@k@ay keeps the doctor away", paper.GetText());
 	}
+
+	@Test
+	public void CollitionWithEditTextFromWordNewSentence() {
+		Pencil pencil = new Pencil(200, 5, 50);
+
+		Paper paper = new Paper();
+		pencil.Write("An       a day keeps the doctor away", paper);
+		pencil.Edit("this is a new sentence", paper);
+
+		assertEquals("An this i@ @a@e@e@@@t@@@edoctor away", paper.GetText());
+	}
 }
