@@ -216,4 +216,14 @@ public class PencilTest {
 
 		assertEquals(9, pencil.GetDurability());
 	}
+
+	@Test
+	public void CannotWriteQuestionMarkWithInsufficientLead() {
+		Pencil pencil = new Pencil(10, 5);
+
+		Paper paper = new Paper();
+		pencil.Write("Question ?", paper);
+
+		assertEquals("Question  ", paper.GetText());
+	}
 }
