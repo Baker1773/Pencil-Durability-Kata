@@ -2,18 +2,24 @@ public class Pencil {
 
 	int leadDurability;
 	int leadDurabilityMax;
-
 	int length;
+	int eraserDurability;
 
-	public Pencil(int leadDurability, int length) {
+	public Pencil(int leadDurability, int length, int eraserDurability) {
 		this.leadDurability = leadDurability;
 		this.leadDurabilityMax = leadDurability;
 
 		this.length = length;
+
+		this.eraserDurability = eraserDurability;
 	}
 
-	public int GetDurability() {
+	public int GetLeadDurability() {
 		return leadDurability;
+	}
+
+	public int GetEraserDurability() {
+		return eraserDurability;
 	}
 
 	public void Write(String stringToWrite, Paper paper) {
@@ -56,8 +62,10 @@ public class Pencil {
 					.lastIndexOf(stringToErase);
 
 			String newBlank = new String();
-			for (int counter = 0; counter < stringToErase.length(); counter++)
+			for (int counter = 0; counter < stringToErase.length(); counter++) {
 				newBlank += ' ';
+				eraserDurability--;
+			}
 
 			String replacementText = originalPaperText.substring(0,
 					indexOfErasedText);
