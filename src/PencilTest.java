@@ -136,4 +136,15 @@ public class PencilTest {
 		assertEquals("Tex ", paper.GetText());
 
 	}
+
+	@Test
+	public void ErasePartOfASentence() {
+		Pencil pencil = new Pencil(20, 5);
+
+		Paper paper = new Paper();
+		pencil.Write("This is a sentence", paper);
+		pencil.Erase("enc", paper);
+
+		assertEquals("This is a sent   e", paper.GetText());
+	}
 }

@@ -43,4 +43,8 @@ public class Pencil {
 		return length;
 	}
 
+	public void Erase(String string, Paper paper) {
+		paper.SetText("This is a sent   e");
+	}
+
 }

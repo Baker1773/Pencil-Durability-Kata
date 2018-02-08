@@ -14,4 +14,8 @@ public class Paper {
 		text += newText;
 	}
 
+	public void SetText(String replacementText) {
+		text = replacementText;
+	}
+
 }
