@@ -315,14 +315,27 @@ public class PencilTest {
 
 	@Test
 	public void EditOnionIntoSentence() {
-		Pencil pencil = new Pencil(20, 5, 5);
+		Pencil pencil = new Pencil(200, 5, 50);
 
 		Paper paper = new Paper();
 		pencil.Write("An apple a day keeps the doctor away", paper);
 		pencil.Erase("apple", paper);
-
 		pencil.Edit("onion", paper);
 
 		assertEquals("An onion a day keeps the doctor away", paper.GetText());
+	}
+
+	@Test
+	public void EditOnionIntoSentenceThenRemoveOnionAndEditAppleBackIn() {
+		Pencil pencil = new Pencil(200, 5, 50);
+
+		Paper paper = new Paper();
+		pencil.Write("An apple a day keeps the doctor away", paper);
+		pencil.Erase("apple", paper);
+		pencil.Edit("onion", paper);
+		pencil.Erase("onion", paper);
+		pencil.Edit("apple", paper);
+
+		assertEquals("An apple a day keeps the doctor away", paper.GetText());
 	}
 }

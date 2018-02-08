@@ -79,8 +79,24 @@ public class Pencil {
 		}
 	}
 
-	public void Edit(String newText, Paper paper) {
-		paper.SetText("An onion a day keeps the doctor away");
+	public void Edit(String newEdit, Paper paper) {
+		if (paper.GetText().indexOf("   ") != -1) {
+			int indexOfSpace = paper.GetText().indexOf("   ") + 1;
+			String replacementText = new String();
+
+			int replacementIndex = 0;
+
+			for (int index = 0; index < paper.GetText().length(); index++) {
+				if (index >= indexOfSpace
+						&& index < indexOfSpace + newEdit.length()) {
+					replacementText += newEdit.charAt(replacementIndex);
+					replacementIndex++;
+				} else
+					replacementText += paper.GetText().charAt(index);
+			}
+
+			paper.SetText(replacementText);
+		}
 	}
 
 }
