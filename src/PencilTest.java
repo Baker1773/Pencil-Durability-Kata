@@ -196,4 +196,14 @@ public class PencilTest {
 		pencil.Write("123", paper);
 		assertEquals(0, pencil.GetDurability());
 	}
+
+	@Test
+	public void PaperGetsQuestionMarkWrittenOnIt() {
+		Pencil pencil = new Pencil(20, 5);
+
+		Paper paper = new Paper();
+		pencil.Write("Question ?", paper);
+
+		assertEquals("Question ?", paper.GetText());
+	}
 }

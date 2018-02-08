@@ -19,21 +19,20 @@ public class Pencil {
 	public void Write(String stringToWrite, Paper paper) {
 		for (int index = 0; index < stringToWrite.length(); index++) {
 			Character c = stringToWrite.charAt(index);
+
 			if (leadDurability >= 1 && Character.isLowerCase(c)) {
 				leadDurability--;
 				paper.Write(c.toString());
 
-			} else if (leadDurability >= 2 && Character.isUpperCase(c)) {
+			}
+			// This is assuming numbers and symbols degrade the durability by 2
+			// points
+			else if (leadDurability >= 2 && !Character.isWhitespace(c)) {
 				leadDurability -= 2;
 				paper.Write(c.toString());
 			} else if (c.equals('\n'))
 				paper.Write(c.toString());
-			// I am assuming digits will use 2 durability for the pencil to
-			// write
-			else if (leadDurability >= 2 && Character.isDigit(c)) {
-				leadDurability -= 2;
-				paper.Write(c.toString());
-			} else
+			else
 				paper.Write(" ");
 		}
 
