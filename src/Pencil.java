@@ -39,8 +39,10 @@ public class Pencil {
 	}
 
 	public void Sharpen() {
-		leadDurability = leadDurabilityMax;
-		length--;
+		if (length > 0) {
+			leadDurability = leadDurabilityMax;
+			length--;
+		}
 	}
 
 	public int GetLength() {

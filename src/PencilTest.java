@@ -250,4 +250,15 @@ public class PencilTest {
 
 		assertEquals(2, pencil.GetDurability());
 	}
+
+	@Test
+	public void CannotSharpenPencilOfLengthZero() {
+		Pencil pencil = new Pencil(10, 1);
+
+		assertEquals(1, pencil.GetLength());
+		pencil.Sharpen();
+		assertEquals(0, pencil.GetLength());
+		pencil.Sharpen();
+		assertEquals(0, pencil.GetLength());
+	}
 }
