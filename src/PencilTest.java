@@ -206,4 +206,14 @@ public class PencilTest {
 
 		assertEquals("Question ?", paper.GetText());
 	}
+
+	@Test
+	public void WritingQuestionMarkUsesLeadDurability() {
+		Pencil pencil = new Pencil(20, 5);
+
+		Paper paper = new Paper();
+		pencil.Write("Question ?", paper);
+
+		assertEquals(9, pencil.GetDurability());
+	}
 }
