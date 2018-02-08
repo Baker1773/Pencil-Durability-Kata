@@ -43,8 +43,20 @@ public class Pencil {
 		return length;
 	}
 
-	public void Erase(String string, Paper paper) {
-		paper.SetText("This is a sent   e");
+	public void Erase(String stringToErase, Paper paper) {
+		String originalPaperText = paper.GetText();
+		int indexOfErasedText = originalPaperText.lastIndexOf(stringToErase);
+
+		String newBlank = new String();
+		for (int counter = 0; counter < stringToErase.length(); counter++)
+			newBlank += ' ';
+
+		String replacementText = originalPaperText.substring(0,
+				indexOfErasedText);
+		replacementText += newBlank;
+		replacementText += originalPaperText.substring(indexOfErasedText
+				+ stringToErase.length());
+		paper.SetText(replacementText);
 	}
 
 }
