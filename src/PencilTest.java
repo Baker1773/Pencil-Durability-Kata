@@ -16,7 +16,7 @@ public class PencilTest {
 	}
 
 	@Test
-	public void PencilLeadDurabilityIsLostAfterWrittingTheLetterA() {
+	public void PencilLeadDurabilityIsLostAfterWritingTheLetterA() {
 
 		Pencil pencil = new Pencil(20, 5);
 		assertEquals(20, pencil.GetDurability());
@@ -29,7 +29,7 @@ public class PencilTest {
 	}
 
 	@Test
-	public void PencilLeadDurabilityIsLostAfterWrittingTheWordApple() {
+	public void PencilLeadDurabilityIsLostAfterWritingTheWordApple() {
 
 		Pencil pencil = new Pencil(20, 5);
 		assertEquals(20, pencil.GetDurability());
@@ -42,7 +42,7 @@ public class PencilTest {
 	}
 
 	@Test
-	public void PencilLeadDurabilityIsLostAfterWrittingTheWordAppleWillInsuffientDurability() {
+	public void PencilLeadDurabilityIsLostAfterWritingTheWordAppleWillInsuffientDurability() {
 
 		Pencil pencil = new Pencil(5, 5);
 		assertEquals(5, pencil.GetDurability());
@@ -170,7 +170,7 @@ public class PencilTest {
 	}
 
 	@Test
-	public void WrittingNumbersUsesLeadDurability() {
+	public void WritingNumbersUsesLeadDurability() {
 		Pencil pencil = new Pencil(20, 5);
 
 		Paper paper = new Paper();
@@ -189,7 +189,7 @@ public class PencilTest {
 	}
 
 	@Test
-	public void LeadDurabilityWillNotGoBelow0WhenWrittingNumbers() {
+	public void LeadDurabilityWillNotGoBelow0WhenWritingNumbers() {
 		Pencil pencil = new Pencil(4, 5);
 
 		Paper paper = new Paper();
