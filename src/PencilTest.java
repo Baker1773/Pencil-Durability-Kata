@@ -178,4 +178,13 @@ public class PencilTest {
 
 		assertEquals(14, pencil.GetDurability());
 	}
+
+	@Test
+	public void AttemptToWriteANumberWithInsufficientLead() {
+		Pencil pencil = new Pencil(4, 5);
+
+		Paper paper = new Paper();
+		pencil.Write("One 1", paper);
+		assertEquals("One  ", paper.GetText());
+	}
 }
