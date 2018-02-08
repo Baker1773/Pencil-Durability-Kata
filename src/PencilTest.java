@@ -187,4 +187,13 @@ public class PencilTest {
 		pencil.Write("One 1", paper);
 		assertEquals("One  ", paper.GetText());
 	}
+
+	@Test
+	public void LeadDurabilityWillNotGoBelow0WhenWrittingNumbers() {
+		Pencil pencil = new Pencil(4, 5);
+
+		Paper paper = new Paper();
+		pencil.Write("123", paper);
+		assertEquals(0, pencil.GetDurability());
+	}
 }
