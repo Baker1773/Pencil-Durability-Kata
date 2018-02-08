@@ -28,7 +28,9 @@ public class Pencil {
 				paper.Write(c.toString());
 			} else if (c.equals('\n'))
 				paper.Write(c.toString());
-			else
+			else if (Character.isDigit(c)) {
+				paper.Write(c.toString());
+			} else
 				paper.Write(" ");
 		}
 
