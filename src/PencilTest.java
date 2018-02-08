@@ -261,4 +261,22 @@ public class PencilTest {
 		pencil.Sharpen();
 		assertEquals(0, pencil.GetLength());
 	}
+
+	@Test
+	public void SharpeningPencilOfLengthZeroDoesNotResetLeadDurability() {
+		Pencil pencil = new Pencil(10, 1);
+		Paper paper = new Paper();
+
+		pencil.Write("Tab\tTab", paper);
+		pencil.Sharpen();
+
+		assertEquals(0, pencil.GetLength());
+		assertEquals(10, pencil.GetDurability());
+
+		pencil.Write("Tab\tTab", paper);
+		pencil.Sharpen();
+
+		assertEquals(0, pencil.GetLength());
+		assertEquals(2, pencil.GetDurability());
+	}
 }
