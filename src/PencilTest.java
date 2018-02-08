@@ -360,4 +360,16 @@ public class PencilTest {
 
 		assertEquals("An this i@ @a@e@e@@@t@@@edoctor away", paper.GetText());
 	}
+
+	@Test
+	public void EditWillExtendTextLength() {
+		Pencil pencil = new Pencil(200, 5, 50);
+
+		Paper paper = new Paper();
+		pencil.Write("This is a test!", paper);
+		pencil.Erase("test", paper);
+		pencil.Edit("this?is a new sentence", paper);
+
+		assertEquals("This is a this@is a new sentence", paper.GetText());
+	}
 }

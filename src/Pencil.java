@@ -101,6 +101,9 @@ public class Pencil {
 					replacementText += paper.GetText().charAt(index);
 			}
 
+			for (; replacementIndex < newEdit.length(); replacementIndex++)
+				replacementText += newEdit.charAt(replacementIndex);
+
 			paper.SetText(replacementText);
 		}
 	}
