@@ -399,4 +399,15 @@ public class PencilTest {
 		assertEquals(160, pencil.GetLeadDurability());
 	}
 
+	@Test
+	public void EditTextUsesPencilLeadWithCollisionWithInsufficientLead() {
+		Pencil pencil = new Pencil(37, 5, 50);
+
+		Paper paper = new Paper();
+		pencil.Write("An apple a day keeps the doctor away", paper);
+		pencil.Erase("apple", paper);
+		pencil.Edit("artichokE", paper);
+		assertEquals("An artich@ day keeps the doctor away", paper.GetText());
+	}
+
 }

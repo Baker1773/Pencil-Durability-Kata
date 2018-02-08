@@ -82,35 +82,6 @@ public class Pencil {
 	// This is assuming it will write into the left most viable white space
 	public void Edit(String newEdit, Paper paper) {
 		if (paper.GetText().indexOf("   ") != -1) {
-			/**
-			 * int indexOfSpace = paper.GetText().indexOf("   ") + 1; String
-			 * replacementText = new String();
-			 * 
-			 * int replacementIndex = 0;
-			 * 
-			 * for (int index = 0; index < paper.GetText().length(); index++) {
-			 * if (index >= indexOfSpace && index < indexOfSpace +
-			 * newEdit.length()) { if
-			 * (Character.isWhitespace(paper.GetText().charAt(index))) { if
-			 * (Character.isLowerCase(newEdit .charAt(replacementIndex)))
-			 * leadDurability--; // 1 durability is used for lower // case
-			 * letters else if (!Character.isWhitespace(newEdit
-			 * .charAt(replacementIndex))) leadDurability -= 2; // 2 durability
-			 * is used for // upper case letters, // numbers, and symbols
-			 * replacementText += newEdit.charAt(replacementIndex); } else if
-			 * (!Character.isWhitespace(newEdit .charAt(replacementIndex))) { if
-			 * (Character.isLowerCase(newEdit .charAt(replacementIndex)))
-			 * leadDurability--; // 1 durability is used for lower // case
-			 * letters else if (!Character.isWhitespace(newEdit
-			 * .charAt(replacementIndex))) leadDurability -= 2; // 2 durability
-			 * is used for // upper case letters, // numbers, and symbols
-			 * replacementText += "@"; } else replacementText +=
-			 * paper.GetText().charAt(index); replacementIndex++; } else
-			 * replacementText += paper.GetText().charAt(index); }
-			 * 
-			 * for (; replacementIndex < newEdit.length(); replacementIndex++)
-			 * replacementText += newEdit.charAt(replacementIndex);
-			 **/
 
 			String oldPaperText = paper.GetText();
 			paper.Clear();
@@ -126,10 +97,17 @@ public class Pencil {
 							.charAt(replacementIndex))) {
 						String nextChar = newEdit.charAt(replacementIndex) + "";
 						Write(nextChar, paper);
-						String collisionText = paper.GetText().substring(0,
-								paper.GetText().length() - 1)
-								+ "@";
-						paper.SetText(collisionText);
+						if (paper.GetText().charAt(index) != ' ') {
+							String collisionText = paper.GetText().substring(0,
+									paper.GetText().length() - 1)
+									+ "@";
+							paper.SetText(collisionText);
+						} else {
+							String collisionText = paper.GetText().substring(0,
+									paper.GetText().length() - 1);
+							paper.SetText(collisionText);
+							paper.Write(oldPaperText.charAt(index) + "");
+						}
 
 					} else
 						paper.Write(oldPaperText.charAt(index) + "");
