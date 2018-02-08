@@ -79,6 +79,7 @@ public class Pencil {
 		}
 	}
 
+	// This is assuming it will write into the left most viable white space
 	public void Edit(String newEdit, Paper paper) {
 		if (paper.GetText().indexOf("   ") != -1) {
 			int indexOfSpace = paper.GetText().indexOf("   ") + 1;
@@ -89,9 +90,18 @@ public class Pencil {
 			for (int index = 0; index < paper.GetText().length(); index++) {
 				if (index >= indexOfSpace
 						&& index < indexOfSpace + newEdit.length()) {
-					if (Character.isWhitespace(paper.GetText().charAt(index)))
+					if (Character.isWhitespace(paper.GetText().charAt(index))) {
+						if (Character.isLowerCase(newEdit
+								.charAt(replacementIndex)))
+							leadDurability--; // 1 durability is used for lower
+												// case letters
+						else if (!Character.isWhitespace(newEdit
+								.charAt(replacementIndex)))
+							leadDurability -= 2; // 2 durability is used for
+													// upper case letters,
+													// numbers, and symbols
 						replacementText += newEdit.charAt(replacementIndex);
-					else if (!Character.isWhitespace(newEdit
+					} else if (!Character.isWhitespace(newEdit
 							.charAt(replacementIndex)))
 						replacementText += "@";
 					else

@@ -372,4 +372,18 @@ public class PencilTest {
 
 		assertEquals("This is a this@is a new sentence", paper.GetText());
 	}
+
+	@Test
+	public void EditTextUsesPencilLeadNoCollision() {
+		Pencil pencil = new Pencil(200, 5, 50);
+
+		Paper paper = new Paper();
+		pencil.Write("An apple a day keeps the doctor away", paper);
+		assertEquals(170, pencil.GetLeadDurability());
+		pencil.Erase("apple", paper);
+		pencil.Edit("onion", paper);
+
+		assertEquals(165, pencil.GetLeadDurability());
+	}
+
 }
