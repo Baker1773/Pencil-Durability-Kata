@@ -18,4 +18,8 @@ public class Paper {
 		text = replacementText;
 	}
 
+	public void Clear() {
+		text = new String();
+	}
+
 }
