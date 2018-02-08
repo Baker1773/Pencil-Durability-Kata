@@ -238,11 +238,15 @@ public class PencilTest {
 	}
 
 	@Test
-	public void WritingATabDoesNotUseLeadDurability() {
+	public void WritingATabDoesNotDegradeLeadDurability() {
 		Pencil pencil = new Pencil(10, 5);
 
 		Paper paper = new Paper();
 		pencil.Write("Tab\tTab", paper);
+
+		assertEquals(2, pencil.GetDurability());
+
+		pencil.Write("\t", paper);
 
 		assertEquals(2, pencil.GetDurability());
 	}
