@@ -60,15 +60,18 @@ public class Pencil {
 		if (originalPaperText.indexOf(stringToErase) != -1) {
 			int indexOfErasedText = originalPaperText
 					.lastIndexOf(stringToErase);
-
+			int ammountToErase = Math.min(eraserDurability,
+					stringToErase.length());
 			String newBlank = new String();
-			for (int counter = 0; counter < stringToErase.length(); counter++) {
+			for (int counter = 0; counter < stringToErase.length()
+					&& eraserDurability > 0; counter++) {
 				newBlank += ' ';
 				eraserDurability--;
 			}
-
+			int indexOfLastLetterErased = indexOfErasedText
+					+ stringToErase.length() - newBlank.length();
 			String replacementText = originalPaperText.substring(0,
-					indexOfErasedText);
+					indexOfLastLetterErased);
 			replacementText += newBlank;
 			replacementText += originalPaperText.substring(indexOfErasedText
 					+ stringToErase.length());

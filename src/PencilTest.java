@@ -150,7 +150,7 @@ public class PencilTest {
 
 	@Test
 	public void ErasePartOfASentenceThenEraseAnotherPartOfASentence() {
-		Pencil pencil = new Pencil(20, 5, 5);
+		Pencil pencil = new Pencil(20, 5, 10);
 
 		Paper paper = new Paper();
 		pencil.Write("This is a sentence", paper);
@@ -300,5 +300,16 @@ public class PencilTest {
 		pencil.Erase("enc", paper);
 
 		assertEquals(7, pencil.GetEraserDurability());
+	}
+
+	@Test
+	public void EraserCannotEraseWhenDurabilityIsZero() {
+		Pencil pencil = new Pencil(20, 5, 5);
+
+		Paper paper = new Paper();
+		pencil.Write("This is a sentence", paper);
+		pencil.Erase("sentenc", paper);
+
+		assertEquals("This is a se     e", paper.GetText());
 	}
 }
