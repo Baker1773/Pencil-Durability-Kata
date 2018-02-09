@@ -16,4 +16,13 @@ public class PaperTest {
 		paper.Write("Test text");
 		assertEquals("Test text", paper.text);
 	}
+
+	@Test
+	public void WritingTwiceOnAPaperCombinesText() {
+		Paper paper = new Paper();
+		paper.Write("Test");
+		assertEquals("Test", paper.text);
+		paper.Write(" text");
+		assertEquals("Test text", paper.text);
+	}
 }
