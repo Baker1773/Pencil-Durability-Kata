@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="main.PaperTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-02-09T18:11:44" hostname="Brent-PC" time="0.001">
+  <properties/>
+  <testcase name="WritingOnPaperRetainsNewText" classname="main.PaperTest" time="0.0"/>
+  <testcase name="GetTextWillReturnTextValue" classname="main.PaperTest" time="0.0"/>
+  <testcase name="WhenPaperIsCreatedItIsBlank" classname="main.PaperTest" time="0.0"/>
+  <testcase name="ClearWillResetTextValue" classname="main.PaperTest" time="0.0"/>
+  <testcase name="WritingTwiceOnAPaperCombinesText" classname="main.PaperTest" time="0.0"/>
+  <testcase name="ReplaceWillReassignTextValue" classname="main.PaperTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

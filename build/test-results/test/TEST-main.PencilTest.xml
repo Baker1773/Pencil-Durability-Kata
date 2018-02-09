@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="main.PencilTest" tests="36" skipped="0" failures="0" errors="0" timestamp="2018-02-09T18:11:44" hostname="Brent-PC" time="0.004">
+  <properties/>
+  <testcase name="WritingNumbersUsesLeadDurability" classname="main.PencilTest" time="0.0"/>
+  <testcase name="PencilLeadDurabilityIsLostAfterWritingTheWordApple" classname="main.PencilTest" time="0.0"/>
+  <testcase name="ErasingDegradesEraserDurability" classname="main.PencilTest" time="0.0"/>
+  <testcase name="PaperGetsSentenceWithNewLineWrittenOnIt" classname="main.PencilTest" time="0.0"/>
+  <testcase name="PaperGetsAppleWrittenOnIt" classname="main.PencilTest" time="0.0"/>
+  <testcase name="LeadDurabilityWillNotGoBelow0WhenWritingNumbers" classname="main.PencilTest" time="0.0"/>
+  <testcase name="AttemptToEraseSomethingNotInTheSentence" classname="main.PencilTest" time="0.0"/>
+  <testcase name="EraserCannotEraseWhenDurabilityIsZero" classname="main.PencilTest" time="0.0"/>
+  <testcase name="PaperGetsQuestionMarkWrittenOnIt" classname="main.PencilTest" time="0.0"/>
+  <testcase name="EditTextUsesPencilLeadWithCollisionWithInsufficientLead" classname="main.PencilTest" time="0.0"/>
+  <testcase name="CannotSharpenPencilOfLengthZero" classname="main.PencilTest" time="0.0"/>
+  <testcase name="WritingATabDoesNotDegradeLeadDurability" classname="main.PencilTest" time="0.0"/>
+  <testcase name="SharpeningPencilShortensPencil" classname="main.PencilTest" time="0.0"/>
+  <testcase name="EditOnionIntoSentence" classname="main.PencilTest" time="0.0"/>
+  <testcase name="SharpenPencilToRegainLostDurability" classname="main.PencilTest" time="0.0"/>
+  <testcase name="PencilRetainsLeadDurabilityAndLeadDurabilityIs5" classname="main.PencilTest" time="0.0"/>
+  <testcase name="CollitionWithEditTextFromWordNewSentence" classname="main.PencilTest" time="0.001"/>
+  <testcase name="PencilLeadDurabilityIsLostAfterWritingTheWordAppleWillInsuffientDurability" classname="main.PencilTest" time="0.0"/>
+  <testcase name="WritingQuestionMarkUsesLeadDurability" classname="main.PencilTest" time="0.0"/>
+  <testcase name="PencilLeadDurabilityIsLostAfterWritingTheLetterA" classname="main.PencilTest" time="0.0"/>
+  <testcase name="PencilRetainsLeadDurabilityAndLeadDurabilityIs20" classname="main.PencilTest" time="0.0"/>
+  <testcase name="PencilCanWriteTab" classname="main.PencilTest" time="0.0"/>
+  <testcase name="EditOnionIntoSentenceThenRemoveOnionAndEditAppleBackIn" classname="main.PencilTest" time="0.0"/>
+  <testcase name="SharpeningPencilOfLengthZeroDoesNotResetLeadDurability" classname="main.PencilTest" time="0.0"/>
+  <testcase name="CollitionWithEditTextFromWordBeingToLong" classname="main.PencilTest" time="0.0"/>
+  <testcase name="PaperGetsTheNumber1WrittenOnIt" classname="main.PencilTest" time="0.0"/>
+  <testcase name="AttemptToWriteANumberWithInsufficientLead" classname="main.PencilTest" time="0.0"/>
+  <testcase name="PaperGetsOnionWrittenOnIt" classname="main.PencilTest" time="0.0"/>
+  <testcase name="CannotWriteQuestionMarkWithInsufficientLead" classname="main.PencilTest" time="0.0"/>
+  <testcase name="ErasePartOfASentenceThenEraseAnotherPartOfASentence" classname="main.PencilTest" time="0.0"/>
+  <testcase name="InsufficientLeadAttemptsTextButWritesTex" classname="main.PencilTest" time="0.0"/>
+  <testcase name="ErasePartOfASentence" classname="main.PencilTest" time="0.0"/>
+  <testcase name="EditTextUsesPencilLeadWithCollision" classname="main.PencilTest" time="0.0"/>
+  <testcase name="PaperGetsSentenceWrittenOnIt" classname="main.PencilTest" time="0.0"/>
+  <testcase name="EditTextUsesPencilLeadNoCollision" classname="main.PencilTest" time="0.0"/>
+  <testcase name="EditWillExtendTextLength" classname="main.PencilTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
