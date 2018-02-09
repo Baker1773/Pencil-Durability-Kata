@@ -35,4 +35,12 @@ public class PaperTest {
 		assertEquals("New text", paper.text);
 	}
 
+	@Test
+	public void GetTextWillReturnTextValue() {
+		Paper paper = new Paper();
+		paper.Write("Test text");
+		assertEquals("Test text", paper.text);
+		assertEquals("Test text", paper.GetText());
+	}
+
 }
