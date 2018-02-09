@@ -25,4 +25,14 @@ public class PaperTest {
 		paper.Write(" text");
 		assertEquals("Test text", paper.text);
 	}
+
+	@Test
+	public void ReplaceWillReassignTextValue() {
+		Paper paper = new Paper();
+		paper.Write("Test text");
+		assertEquals("Test text", paper.text);
+		paper.SetText("New text");
+		assertEquals("New text", paper.text);
+	}
+
 }
