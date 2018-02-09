@@ -43,4 +43,13 @@ public class PaperTest {
 		assertEquals("Test text", paper.GetText());
 	}
 
+	@Test
+	public void ClearWillResetTextValue() {
+		Paper paper = new Paper();
+		paper.SetText("This is a test");
+		assertEquals("This is a test", paper.text);
+		paper.Clear();
+		assertEquals("", paper.text);
+	}
+
 }
